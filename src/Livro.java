@@ -74,8 +74,8 @@ public class Livro {
 	}
     
     // Métodos Getters e Setters
-    // ..
-    // Métodos para empréstimo e devolução
-    // ...
+    // ..jhkjhsgbcuqh
+    // Métodos para empréstimo iuiokluse devoluçãodfsa
+    // ...asadasd
 	//pipipipopopo
 }
