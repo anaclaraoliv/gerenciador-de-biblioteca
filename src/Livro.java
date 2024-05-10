@@ -6,6 +6,7 @@ public class Livro {
     private int anoPublicacao;
     private String ISBN;
     private int quantidadeDisponivel;
+	//mklsdjaldksjalsdjkafhkdjhajkdhakjs
 
     public Livro(String titulo, String autor, String editora, int anoPublicacao, String ISBN, int quantidadeDisponivel) {
         this.titulo = titulo;
@@ -76,4 +77,5 @@ public class Livro {
     // ..
     // Métodos para empréstimo e devolução
     // ...
+	//pipipipopopo
 }
