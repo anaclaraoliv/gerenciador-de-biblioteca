@@ -6,7 +6,6 @@ public class Livro {
     private int anoPublicacao;
     private String ISBN;
     private int quantidadeDisponivel;
-	//mklsdjaldksjalsdjkafhkdjhajkdhakjs
 
     public Livro(String titulo, String autor, String editora, int anoPublicacao, String ISBN, int quantidadeDisponivel) {
         this.titulo = titulo;
@@ -37,7 +36,7 @@ public class Livro {
 		return ISBN;
 	}
 
-	public String setTitulo(String Autor) {
+	public String setTitulo(String titulo) {
 		return titulo;
 	}
 
@@ -50,22 +49,31 @@ public class Livro {
 		return editora;
 	}
 
-	public int setAnoPublicacao(int Autor) {
+	public String setAnoPublicacao(String anoPublicacao) {
 		return anoPublicacao;
 	}
 
-	public String setISBN(String Autor) {
+	public String setISBN(String ISBN) {
 		return ISBN;
 	}
 	
-	public int getQuantidadeDisponivel() {
+	public int getQuantidadeDisponivel(int quantidadeDisponivel) {
 		return quantidadeDisponivel;
 	}
 
-	public void setQuantidadeDisponivel(int quantidadeDisponivel) {
-		this.quantidadeDisponivel = quantidadeDisponivel;
+	public void emprestimo(int quantidadeDisponivel) {
+		if(quantidadeDisponivel > 0){
+			this.quantidadeDisponivel = quantidadeDisponivel - 1;
+		}
+		else{
+			System.out.println("Não é possível fazer o empréstimo, livro fora de estoque");
+		}
 	}
 	
+	public void devolucao(int quantidadeDisponivel) {
+			this.quantidadeDisponivel = quantidadeDisponivel + 1;
+		}
+
 	public void getLivro() {
 		System.out.println(this.titulo+"\nAutor(es): "+this.autor+
 					"\nAno de publicação: "+this.anoPublicacao+"\nEditora: "+this.editora+
@@ -73,9 +81,4 @@ public class Livro {
 					"\n- - - - - - - - - - - - - - - - -");
 	}
     
-    // Métodos Getters e Setters
-    // ..jhkjhsgbcuqh
-    // Métodos para empréstimo iuiokluse devoluçãodfsa
-    // ...asadasd
-	//pipipipopopo
 }

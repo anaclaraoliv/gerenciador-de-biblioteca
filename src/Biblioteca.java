@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Scanner;
 import java.util.List;
         
@@ -7,15 +8,15 @@ class Biblioteca {
 	Scanner sc = new Scanner(System.in); 
 	
     private List<Livro> acervo = new ArrayList<Livro>(); 
-    private List<Emprestimo> historico_emprestimo = new ArrayList<Emprestimo>(); ;
+    private List<Emprestimo> historico_emprestimo = new ArrayList<Emprestimo>();
 
     public Biblioteca() {
         this.acervo = new ArrayList<>();
     }
     
-    public void adicionarLivro(Livro livro){
+    public String adicionarLivro(Livro livro){
         acervo.add(livro);
-        System.out.println("Livro adicionado com sucesso!");
+        return ("Livro adicionado com sucesso!");
     }
     
     public void exibirAcervo() {	
@@ -24,16 +25,16 @@ class Biblioteca {
     	}
     }
     
-    public void buscarLivro(String palavraChave){
-        //Estudo Format String
+    public String buscarLivro(String palavraChave){
+        return palavraChave;
     }      
     
-    public void atualizarLivro(String isbn, String item, String alteracao){
+    public void atualizarLivro(String ISBN, String item, String alteracao, int anoPublicacao, int quantidadeDisponivel){
     	
     	Livro livroSelecionado = null;
     	
     	for (Livro livro : acervo) {
-    		if (livro.getISBN()==isbn) {
+    		if (livro.getISBN()==ISBN) {
     			livro.getLivro();
     			livroSelecionado = livro;
 		    	
@@ -77,7 +78,8 @@ class Biblioteca {
     	}
     }
     
-    public void emprestimo(){
+    public void emprestimo(String locatario,int tempoDeEmprestimo,Livro livro,Date dataEmprestimo,Date dataPrevisaoDeDevolucao, Date dataDevolucao,
+    						int limiteLacacao){
         
         
     }
