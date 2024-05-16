@@ -37,10 +37,12 @@ public class Livro {
 	}
 
 	public String setTitulo(String titulo) {
+		this.titulo = titulo;
 		return titulo;
 	}
 
-	public String setAutor(String Autor) {
+	public String setAutor(String autor) {
+		this.autor = autor;
 		return autor;
 	}
 
@@ -49,15 +51,22 @@ public class Livro {
 		return editora;
 	}
 
-	public String setAnoPublicacao(String anoPublicacao) {
+	public int setAnoPublicacao(int anoPublicacao) {
+		this.anoPublicacao = anoPublicacao;
 		return anoPublicacao;
 	}
 
 	public String setISBN(String ISBN) {
+		this.ISBN = ISBN;
 		return ISBN;
 	}
 	
 	public int getQuantidadeDisponivel(int quantidadeDisponivel) {
+		return quantidadeDisponivel;
+	}
+
+	public int setQuantidadeDisponivel(int quantidadeDisponivel) {
+		this.quantidadeDisponivel = quantidadeDisponivel;
 		return quantidadeDisponivel;
 	}
 

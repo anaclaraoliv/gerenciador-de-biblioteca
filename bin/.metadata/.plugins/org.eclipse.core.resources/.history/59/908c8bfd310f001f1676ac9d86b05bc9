@@ -1,0 +1,24 @@
+
+public class TesteBiblioteca {
+    
+	public static void main(String[] args) {
+
+        Biblioteca biblioteca = new Biblioteca();
+
+        Livro livro1 = new Livro("Java: Como Programar", "Deitel & Deitel", "Pearson", 2020, "978-8576059029", 5);
+        Livro livro2 = new Livro("Clean Code", "Robert C. Martin", "Prentice Hall", 2008, "978-0132350884", 3);
+        
+        biblioteca.adicionarLivro(livro1);
+        biblioteca.adicionarLivro(livro2);
+        
+        System.out.println("\n- - - - - - - - - - - - - - - - -\n      ACERVO DA BIBLIOTECA\n- - - - - - - - - - - - - - - - -");
+        biblioteca.exibirAcervo();
+       // biblioteca.excluirLivro(livro1.getISBN());
+       // biblioteca.exibirAcervo();
+        
+        biblioteca.atualizarLivro("978-0132350884","Quantidade","4");
+        biblioteca.exibirAcervo();
+
+   
+	}
+}

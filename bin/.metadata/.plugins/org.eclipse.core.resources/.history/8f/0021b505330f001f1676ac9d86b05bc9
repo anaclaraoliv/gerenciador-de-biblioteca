@@ -1,0 +1,111 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.List;
+import java.text.Normalizer;
+        
+class Biblioteca {
+	
+	Scanner sc = new Scanner(System.in); 
+	
+    private List<Livro> acervo; 
+    private List<Emprestimo> historico_emprestimo;
+
+    public Biblioteca() {
+        this.acervo = new ArrayList<Livro>();
+        this.historico_emprestimo =new ArrayList<Emprestimo>();
+    }
+    
+    public void adicionarLivro(Livro livro){
+        acervo.add(livro);
+        System.out.println("Livro adicionado com sucesso!\n");
+    }
+    
+    public void exibirAcervo() {	
+        System.out.println("\n- - - - - - - - - - - - - - - - -\n      ACERVO DA BIBLIOTECA\n- - - - - - - - - - - - - - - - -");
+    	for (Livro livro : acervo) {
+    		livro.getLivro();
+    	}
+    }
+    
+    public void buscarLivro(String palavraChave){
+        //Estudo Format String FOCAR AGORA
+    }      
+    
+    public void atualizarLivro(String isbn, String item, String alteracao){
+    	
+    	Livro livroSelecionado = null;
+    	item = (item.toLowerCase()).trim();
+    	
+    	for (Livro livro : acervo) {
+    		if (livro.getISBN()==isbn) {
+  
+    			livroSelecionado = livro;
+		    	
+		    	switch (item) { // FALTA TRATAR PARA TIRAR O MAIUSCULO E ACENTOS FORMAT STRING
+		    	  case "titulo" :
+		    		  	livroSelecionado.setTitulo(alteracao);
+		    			System.out.println("Informação atualizada com sucesso");
+		    		  	break;
+		    	    
+		    	  case "autor":
+		    		  	livroSelecionado.setAutor(alteracao);
+		    		  	break;
+		    	    
+		    	  case "editora":
+				    	livroSelecionado.setEditora(alteracao);
+				    	break;
+		    	    
+		    	  case "anopublicado":
+		    		  	try {
+		    		  		livroSelecionado.setAnoPublicacao(Integer.parseInt(alteracao));
+		    			  
+		    		  	} catch (NumberFormatException e) {
+		    		  		System.out.println("Entrada de modificação inválida.\nTente novamente com as informações corretas.\n");
+		    		  	  	}
+		    		  	break;
+		    		  
+		    	  case "isbn":
+			    		livroSelecionado.setISBN(alteracao);
+			    		break;
+			    		
+		    	  case "quantidade":
+		    		  try {
+		    			  livroSelecionado.setQuantidadeDisponivel(Integer.parseInt(alteracao));
+		    			  
+		    		  } catch (NumberFormatException e) {
+		    			  System.out.println("Entrada de modificação inválida.\nTente novamente com as informações corretas.\n");		    		  	  
+		    		  }
+		    		  break;
+		    		  
+		    	  default:
+		    		  System.out.println("Item para modificar não identificado. \nTente novamente com as informações corretas.\n");
+		    		  break;
+		    	}   			
+    		} 
+    	}
+    	if (livroSelecionado==null) {
+			System.out.println("Esse livro não existe.\n");
+		}
+    }
+    
+    public void excluirLivro(String isbn){
+    	for (Livro livro : acervo) {
+    		if (livro.getISBN()==isbn) {
+    		 	acervo.remove(livro);
+    			System.out.println("Livro removido com sucesso!\n");
+
+    		} else {
+    			System.out.println("Livro não encontrado.\n");
+    		}
+    	}
+    }
+    
+    public void emprestimo(){
+        
+        
+    }
+    
+    public void devolucao(){
+        
+    }
+}
