@@ -8,7 +8,7 @@ class Biblioteca {
 	Scanner sc = new Scanner(System.in); 
 	
     private List<Livro> acervo = new ArrayList<Livro>(); 
-    private List<Emprestimo> historico_emprestimo = new ArrayList<Emprestimo>();
+    //private List<Emprestimo> historico_emprestimo = new ArrayList<Emprestimo>();
 
     public Biblioteca() {
         this.acervo = new ArrayList<>();

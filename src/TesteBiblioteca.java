@@ -15,7 +15,7 @@ public class TesteBiblioteca {
         biblioteca.excluirLivro(livro1.getISBN());
         biblioteca.exibirAcervo();
         
-        biblioteca.atualizarLivro("978-0132350884","Editora","Halls Alterado");// FAILSSS
+        biblioteca.atualizarLivro("978-0132350884","Editora","Halls Alterado", 1988, 87);// FAILSSS
         biblioteca.exibirAcervo();
 
    
