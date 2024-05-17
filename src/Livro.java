@@ -36,41 +36,34 @@ public class Livro {
 		return ISBN;
 	}
 
-	public String setTitulo(String titulo) {
-		this.titulo = titulo;
-		return titulo;
-	}
+	public void setTitulo(String titulo) {
+            this.titulo = titulo;
+        }
 
-	public String setAutor(String autor) {
-		this.autor = autor;
-		return autor;
-	}
+        public void setAutor(String autor) {
+            this.autor = autor;
+        }
 
-	public String setEditora(String editora) {
+	public void setEditora(String editora) {
 		this.editora=editora;
-		return editora;
 	}
+        public void setAnoPublicacao(int anoPublicacao) {
+            this.anoPublicacao= anoPublicacao;
+        }
 
-	public int setAnoPublicacao(int anoPublicacao) {
-		this.anoPublicacao = anoPublicacao;
-		return anoPublicacao;
-	}
-
-	public String setISBN(String ISBN) {
-		this.ISBN = ISBN;
-		return ISBN;
-	}
+        public void setISBN(String ISBN) {
+            this.ISBN = ISBN;
+        }
 	
 	public int getQuantidadeDisponivel(int quantidadeDisponivel) {
 		return quantidadeDisponivel;
 	}
-
-	public int setQuantidadeDisponivel(int quantidadeDisponivel) {
-		this.quantidadeDisponivel = quantidadeDisponivel;
-		return quantidadeDisponivel;
+	
+	public void setQuantidadeDisponivel(int quantidadeDisponivel) {
+                this.quantidadeDisponivel = quantidadeDisponivel;
 	}
 
-	public void emprestimo(int quantidadeDisponivel) {
+	public void emprestimo() {
 		if(quantidadeDisponivel > 0){
 			this.quantidadeDisponivel = quantidadeDisponivel - 1;
 		}
@@ -79,10 +72,11 @@ public class Livro {
 		}
 	}
 	
-	public void devolucao(int quantidadeDisponivel) {
+	public void devolucao() {
 			this.quantidadeDisponivel = quantidadeDisponivel + 1;
 		}
 
+        
 	public void getLivro() {
 		System.out.println(this.titulo+"\nAutor(es): "+this.autor+
 					"\nAno de publicação: "+this.anoPublicacao+"\nEditora: "+this.editora+
